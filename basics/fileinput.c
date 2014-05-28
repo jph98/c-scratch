@@ -1,30 +1,16 @@
-#include <ctype.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <string.h>
 
 // C has no concept of strings, it uses char arrays terminated by a sentinel character \0
 int main() {
 
-	char * line = NULL;
+	FILE *fin = fopen("input.txt", "r");	
+	char line[256];	
 
-	// unsigned integer type
-	size_t len = 0;
-
-	ssize_t read;
-
-	FILE * in = fopen("input.txt", "r");
-	if (in = NULL)
-		exit(EXIT_FAILURE);
-
-	while (( read = getline(&line, &len, in)) != -1) {
-		printf("Retrieved line of length %zu :\n", read);
+	while (fgets(line, sizeof(line), fin)) {
 		printf("%s", line);
 	}
 
-	if (line)
-		free(line);
-	exit(EXIT_SUCCESS);
+	fclose(fin);
 
+	return 0;
 }

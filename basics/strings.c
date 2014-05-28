@@ -13,6 +13,7 @@ int main() {
 	msg[2] = msg[1];
 
 	// 2. String literal example
+	printf("segfault expected!");
 	char *anothermsg = "boo";
 	printf("Message is: %s \n", anothermsg);
 
@@ -23,5 +24,5 @@ int main() {
 	printf("Message is: %s \n", anothermsg);
 
 	// BEST PRACTICE - use const instead of a string literal, clearer
-	const char *anothermsg = "boo";
+	const char *yetanother = "boo";
 }
