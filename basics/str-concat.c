@@ -27,4 +27,6 @@ int main() {
 	strcat(example, second);
 	printf("Example: %s \n", example);
 
+	// TODO: strncpy example instead and strncat
+
 }
